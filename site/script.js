@@ -5,8 +5,6 @@ let history = [];
 let historyIndex = -1;
 
 const jokes = ["Why do programmers prefer dark mode? Because light attracts bugs.","I told my computer I needed a break, and it said 'No problem — I’ll go to sleep.'"];
-const fortunes = ["You will find a surprise in your terminal.","Today is a good day to code something amazing.","A new theme awaits you."];
-
 const commands = {
   help() {
     return `
@@ -19,7 +17,6 @@ available commands:
 - date
 - echo
 - joke
-- fortune
 - invert
 - rainbow
 `;
@@ -70,11 +67,7 @@ blog: ...
   joke() {
     return jokes[Math.floor(Math.random() * jokes.length)];
   },
-
-  fortune() {
-    return fortunes[Math.floor(Math.random() * fortunes.length)];
-  },
-
+  
   invert() {
     const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg");
     const fg = getComputedStyle(document.documentElement).getPropertyValue("--fg");
